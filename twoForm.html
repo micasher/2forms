@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="twoForm.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="FirstHeader">קבלה</h1>
+      <hr />
+      <button id="settingsButton">הגדרות</button>
+      <h3 id="selectedCurrencyHeader">Selected Currency:</h3>
+      <h3 id="selectedLanguageHeader">Selected Language:</h3>
+      <h3 id="selectedVATTypeHeader">Selected VAT Type:</h3>
+      <h3 id="selectedRoundingSumHeader">Selected Rounding Sum:</h3>
+      <div id="Settings">
+        <div id="settingsPanel">
+          <label for="CurrencyOptions">מטבע</label>
+          <select id="CurrencyOptions">
+            <option value="Israeli Shekel">שקל ישראלי</option>
+            <option value="US Dollar">דולר אמריקאי</option>
+            <option value="Euro">אירו</option>
+            <option value="Pound Sterling">לישט</option>
+            <option value="Japanese Yen">יין יפני</option>
+            <option value="Swiss Franc">פרנק שוויצרי</option>
+            <option value="Chinese Yuan">יואן סיני</option>
+            <option value="Australian Dollar">דולר אוסטרלי</option>
+            <option value="Canadian Dollar">דולר קנדי</option>
+            <option value="Russian Ruble">רובל</option>
+            <option value="Brazilian Real">ריאל ברזילאי</option>
+            <option value="Hong Kong Dollar">דולר הונג קונגי</option>
+            <option value="Singapore Dollar">דולר סינגפורי</option>
+            <option value="Thai Baht">באט תאילנדי</option>
+            <option value="Mexican Peso">פזו מקסיקני</option>
+            <option value="Turkish Lira">לירה טורקית</option>
+            <option value="New Zealand Dollar">דולר ניו זילנדי</option>
+            <option value="Swedish Krona">כתר שוודי</option>
+            <option value="Norwegian Krone">כתר נורבגי</option>
+            <option value="Danish Krone">כתר דני</option>
+            <option value="South Korean Won">וון דרום קוריאני</option>
+            <option value="Indian Rupee">רופי הודי</option>
+            <option value="Zloty">זלוטי</option>
+            <option value="Rand">ראנד</option>
+            <option value="Kuna">קונה</option>
+            <option value="Czech Koruna">כתר צ'כי</option>
+            <option value="Hungarian Forint">פורינט הונגרי</option>
+            <option value="Indonesian Rupiah">רופי אינדונזי</option>
+            <option value="Romanian Leu">לאו רומני</option>
+            <option value="Bulgarian Lev">לב בולגרי</option>
+            <!-- Add more currency options as needed -->
+          </select>
+        </div>
+        <div id="settingsLanguegePanel">
+          <label for="Language">שפה</label>
+          <select id="Language">
+            <option value="Hebrew">עברית</option>
+            <option value="English">אנגלית</option>
+            <!-- Add more color options as needed -->
+          </select>
+        </div>
+        <div id="settingsVATPanel">
+          <label for="VATType">סוג המע"מ</label>
+          <select id="VATType">
+            <option value="Regular">רגיל</option>
+            <option value="Without VAT (Eilat and abroad)">
+              ללא מע״מ (אילת וחו״ל)
+            </option>
+            <!-- Add more color options as needed -->
+          </select>
+        </div>
+        <div id="settingsRoundingPanel">
+          <label for="Rounding sum">עיגול סכום</label>
+          <select id="RoundingSum">
+            <option value="RoundYES">כן</option>
+            <option value="RoundNO">לא</option>
+            <!-- Add more color options as needed -->
+          </select>
+        </div>
+      </div>
+      <hr />
+      <h2 id="userInfoHeader">פרטי המסמך</h2>
+      <br />
+      <div id="CostumerInfo">
+        <div class="documentInfo">
+          <div class="input-field">
+            <label for="fname">שם הלקוח *</label>
+            <input
+              class="input"
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="הקלידו את שם הלקוח (שמור או מזדמן)"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <label for="documentDate">תאריך המסמך *</label>
+            <input
+              class="input"
+              type="date"
+              id="documentDate"
+              name="documentDate"
+              placeholder="בחרו תאריך"
+            />
+          </div>
+        </div>
+        <hr />
+        <div class="documentDescribe">
+          <div class="input-field">
+            <label id="SecondUserInfoHeader">תיאור תכולת המסמך</label>
+            <input
+              class="input"
+              type="text"
+              id="SecondUserInfoHeaderText"
+              name="SecondUserInfoHeaderText"
+              placeholder="למשל, שם הפרויקט"
+            />
+          </div>
+        </div>
+        <hr />
+        <br />
+        <label id="ThirdUserInfoHeader">פירוט תקבולים</label>
+        <br />
+        <br />
+        <label id="underThirdUserInfoHeader"
+          >איך שילמו לך? אם שילמו לך בכמה צורות תשלום, אפשר לבחור כמה סוגי
+          תקבולים
+        </label>
+        <div class="documentMoreServicesAndItems">
+          <div class="input-field">
+            <label for="CatalogNumber">סוג תקבול *</label>
+            <select id="whatPaymentType">
+              <option value="העברה בנקאית">העברה בנקאית</option>
+              <option value="Bit">Bit</option>
+              <option value="PayBox">PayBox</option>
+              <option value="כרטיס אשראי">כרטיס אשראי</option>
+              <option value="מזומן">מזומן</option>
+              <option value="צ'ק">צ'ק</option>
+              <option value="פייפאל">פייפאל</option>
+              <option value="Google Pay">Google Pay</option>
+              <option value="Apple Pay">Apply Pay</option>
+              <option value="Pay">Pay</option>
+              <option value="ביטקוין">ביטקוין</option>
+              <option value="איתריום">איתריום</option>
+              <option value="שובר מתנה">שובר מתנה</option>
+              <option value="שווה כסף">שווה כסף</option>
+              <option value="V-CHECK">V-CHECK</option>
+              <option value="Colu">Colu</option>
+              <option value="ניקוי חלק עובד בטלא">ניקוי חלק עובד בטלא</option>
+              <option value="ניכוי במקור">ניכוי במקור</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label for="Description">תאריך *</label>
+            <input
+              class="input"
+              type="date"
+              id="documentSecondDate"
+              name="documentDate"
+              placeholder="בחרו תאריך"
+            />
+          </div>
+          <div class="input-field">
+            <label for="Amount">סכום *</label>
+            <input
+              class="input"
+              type="text"
+              id="Amount"
+              name="Amount"
+              placeholder="0"
+            />
+          </div>
+          <div class="input-field">
+            <label for="CurrencyOptions">מטבע:</label>
+            <select id="secondCurrencyOptions">
+              <option value="Israeli Shekel">שקל ישראלי</option>
+              <option value="US Dollar">דולר אמריקאי</option>
+              <option value="Euro">אירו</option>
+              <option value="Pound Sterling">לישט</option>
+              <option value="Japanese Yen">יין יפני</option>
+              <option value="Swiss Franc">פרנק שוויצרי</option>
+              <option value="Chinese Yuan">יואן סיני</option>
+              <option value="Australian Dollar">דולר אוסטרלי</option>
+              <option value="Canadian Dollar">דולר קנדי</option>
+              <option value="Russian Ruble">רובל</option>
+              <option value="Brazilian Real">ריאל ברזילאי</option>
+              <option value="Hong Kong Dollar">דולר הונג קונגי</option>
+              <option value="Singapore Dollar">דולר סינגפורי</option>
+              <option value="Thai Baht">באט תאילנדי</option>
+              <option value="Mexican Peso">פזו מקסיקני</option>
+              <option value="Turkish Lira">לירה טורקית</option>
+              <option value="New Zealand Dollar">דולר ניו זילנדי</option>
+              <option value="Swedish Krona">כתר שוודי</option>
+              <option value="Norwegian Krone">כתר נורבגי</option>
+              <option value="Danish Krone">כתר דני</option>
+              <option value="South Korean Won">וון דרום קוריאני</option>
+              <option value="Indian Rupee">רופי הודי</option>
+              <option value="Zloty">זלוטי</option>
+              <option value="Rand">ראנד</option>
+              <option value="Kuna">קונה</option>
+              <option value="Czech Koruna">כתר צ'כי</option>
+              <option value="Hungarian Forint">פורינט הונגרי</option>
+              <option value="Indonesian Rupiah">רופי אינדונזי</option>
+              <option value="Romanian Leu">לאו רומני</option>
+              <option value="Bulgarian Lev">לב בולגרי</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label for="VAT">פרטים נוספים</label>
+            <input
+              class="input"
+              type="text"
+              id="Description"
+              name="Description"
+              placeholder="חשבון משלם (לא חובה)"
+            />
+          </div>
+          <div class="input-field">
+            <input
+              class="input"
+              type="text"
+              id="Description"
+              name="Description"
+              placeholder="מס' עסקה,(אם אין, לא נורא)"
+            />
+          </div>
+          <button id="acceptLine">אישור</button>
+        </div>
+        <button id="addMoreLine">הוספת סוג תקבול *</button>
+      </div>
+      <br />
+      <hr />
+      <h2 id="headNotes">הערות שיופיעו במסמך</h2>
+      <div id="Notes">
+        <div class="field">
+          <label>תוכן מתחת לשורות הפירוט</label>
+          <textarea
+            type="text"
+            id="NotesDescription"
+            name="NotesDescription"
+            placeholder="יוצג ליד שורת הפירוט, בסמוך לחתימה שלך"
+          ></textarea>
+        </div>
+        <br />
+        <div class="field">
+          <label>הערות בתחתית המסמך</label>
+          <textarea
+            type="text"
+            id="NotesLowerDescription"
+            name="NotesLowerDescription"
+            placeholder="מתאים לאותיות קטנות, תנאים ודיסקליימר"
+          ></textarea>
+        </div>
+      </div>
+      <hr />
+      <div id="MailInfo">
+        <brr />
+        <h2 id="mailInfo">שליחה במייל</h2>
+        <div class="field">
+          <label id="sendOriginalToMail">שליחת מסמך המקור במייל</label>
+          <input
+            class="input"
+            type="text"
+            id="insertMail"
+            name="insertMail"
+            placeholder="הכנסת כתובת מייל"
+          />
+          <h6 id="underMailInput">ניתן למלא עד 5 כתובות מייל</h6>
+          <br />
+        </div>
+        <div class="field">
+          <label id="moreContentForMail">תוכן נוסף במייל ללקוח</label>
+          <input
+            class="input"
+            type="text"
+            id="moreContent"
+            name="moreContent"
+            placeholder="יצורף לגוף המייל הנשלח ללקוח"
+          />
+        </div>
+        <!-- <div class="field">
+          <h4 id="OnlinePaymentSwitch">קבלת תשלום אונליין</h4>
+          <input class="input" type="checkbox" id="OnlinePaymentSwitch" />
+        </div> -->
+      </div>
+
+      <hr />
+      <br />
+      <div id="continueButtons">
+        <button id="documentProduction">הפקת מסמך</button>
+        <button id="draft">שמירת טיוטה</button>
+        <button id="preview">תצוגה מקדימה</button>
+      </div>
+    </div>
+    <script src="twoForm.js"></script>
+  </body>
+</html>
