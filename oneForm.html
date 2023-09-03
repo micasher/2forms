@@ -11,6 +11,10 @@
       <h1 id="FirstHeader">חשבונית מס</h1>
       <hr />
       <button id="settingsButton">הגדרות</button>
+      <h3 id="selectedCurrencyHeader">Selected Currency:</h3>
+      <h3 id="selectedLanguageHeader">Selected Language:</h3>
+      <h3 id="selectedVATTypeHeader">Selected VAT Type:</h3>
+      <h3 id="selectedRoundingSumHeader">Selected Rounding Sum:</h3>
       <div id="Settings">
         <div id="settingsPanel">
           <label for="CurrencyOptions">מטבע</label>
@@ -57,8 +61,8 @@
           </select>
         </div>
         <div id="settingsVATPanel">
-          <label for="VAT type">סוג המע"מ</label>
-          <select id="VAT type">
+          <label for="VATType">סוג המע"מ</label>
+          <select id="VATType">
             <option value="Regular">רגיל</option>
             <option value="Without VAT (Eilat and abroad)">
               ללא מע״מ (אילת וחו״ל)
@@ -68,7 +72,7 @@
         </div>
         <div id="settingsRoundingPanel">
           <label for="Rounding sum">עיגול סכום</label>
-          <select id="Rounding sum">
+          <select id="RoundingSum">
             <option value="RoundYES">כן</option>
             <option value="RoundNO">לא</option>
             <!-- Add more color options as needed -->
@@ -79,129 +83,140 @@
       <h2 id="userInfoHeader">פרטי המסמך</h2>
       <br />
       <div id="CostumerInfo">
-        <div class="input-field">
-          <label for="fname">שם מלא</label>
-          <input
-            class="input"
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="הקלידו את שם הלקוח(שמור או מזדמן)"
-          />
+        <div class="documentInfo">
+          <div class="input-field">
+            <label for="fname">שם הלקוח *</label>
+            <input
+              class="input"
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="הקלידו את שם הלקוח(שמור או מזדמן)"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <label for="documentDate">תאריך המסמך *</label>
+            <input
+              class="input"
+              type="date"
+              id="documentDate"
+              name="documentDate"
+              placeholder="בחרו תאריך"
+            />
+          </div>
+          <div class="input-field">
+            <label for="ToPayUntil">לתשלום עד *</label>
+            <input
+              class="input"
+              type="date"
+              id="ToPayUntil"
+              name="ToPayUntil"
+              placeholder="בחרו תאריך"
+            />
+          </div>
         </div>
-        <div class="input-field">
-          <label for="documentDate">תאריך המסמך</label>
-          <input
-            class="input"
-            type="date"
-            id="documentDate"
-            name="documentDate"
-            placeholder="בחרו תאריך"
-          />
+        <hr />
+        <div class="documentDescribe">
+          <div class="input-field">
+            <label id="SecondUserInfoHeader">תיאור תכולת המסמך</label>
+            <input
+              class="input"
+              type="text"
+              id="SecondUserInfoHeaderText"
+              name="SecondUserInfoHeaderText"
+              placeholder="למשל, שם הפרויקט"
+            />
+          </div>
         </div>
-        <div class="input-field">
-          <label for="ToPayUntil">לתשלום עד</label>
-          <input
-            class="input"
-            type="date"
-            id="ToPayUntil"
-            name="ToPayUntil"
-            placeholder="בחרו תאריך"
-          />
+        <hr />
+        <br />
+        <label id="ThirdUserInfoHeader">פירוט שירותים ופריטים</label>
+        <br />
+        <div class="documentMoreServicesAndItems">
+          <div class="input-field">
+            <label for="CatalogNumber">מק"ט</label>
+            <input
+              class="input"
+              type="text"
+              id="CatalogNumber"
+              name="CatalogNumber"
+            />
+          </div>
+          <div class="input-field">
+            <label for="Description">פירוט *</label>
+            <input
+              class="input"
+              type="text"
+              id="Description"
+              name="Description"
+              placeholder="תיאור השירות או המוצר"
+            />
+          </div>
+          <div class="input-field">
+            <label for="Amount">כמות *</label>
+            <input class="input" type="text" id="Amount" name="Amount" />
+          </div>
+          <div class="input-field">
+            <label for="Price per unit">מחיר ליחידה *</label>
+            <input
+              class="input"
+              type="text"
+              id="Price per unit"
+              name="Price per unit"
+            />
+          </div>
+          <div class="input-field">
+            <label for="CurrencyOptions">מטבע:</label>
+            <select id="secondCurrencyOptions">
+              <option value="Israeli Shekel">שקל ישראלי</option>
+              <option value="US Dollar">דולר אמריקאי</option>
+              <option value="Euro">אירו</option>
+              <option value="Pound Sterling">לישט</option>
+              <option value="Japanese Yen">יין יפני</option>
+              <option value="Swiss Franc">פרנק שוויצרי</option>
+              <option value="Chinese Yuan">יואן סיני</option>
+              <option value="Australian Dollar">דולר אוסטרלי</option>
+              <option value="Canadian Dollar">דולר קנדי</option>
+              <option value="Russian Ruble">רובל</option>
+              <option value="Brazilian Real">ריאל ברזילאי</option>
+              <option value="Hong Kong Dollar">דולר הונג קונגי</option>
+              <option value="Singapore Dollar">דולר סינגפורי</option>
+              <option value="Thai Baht">באט תאילנדי</option>
+              <option value="Mexican Peso">פזו מקסיקני</option>
+              <option value="Turkish Lira">לירה טורקית</option>
+              <option value="New Zealand Dollar">דולר ניו זילנדי</option>
+              <option value="Swedish Krona">כתר שוודי</option>
+              <option value="Norwegian Krone">כתר נורבגי</option>
+              <option value="Danish Krone">כתר דני</option>
+              <option value="South Korean Won">וון דרום קוריאני</option>
+              <option value="Indian Rupee">רופי הודי</option>
+              <option value="Zloty">זלוטי</option>
+              <option value="Rand">ראנד</option>
+              <option value="Kuna">קונה</option>
+              <option value="Czech Koruna">כתר צ'כי</option>
+              <option value="Hungarian Forint">פורינט הונגרי</option>
+              <option value="Indonesian Rupiah">רופי אינדונזי</option>
+              <option value="Romanian Leu">לאו רומני</option>
+              <option value="Bulgarian Lev">לב בולגרי</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label for="VAT">מע"מ</label>
+            <select id="VAT">
+              <option value="Before">לפני</option>
+              <option value="VATIncluded">כולל</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <h4>סה"כ</h4>
+            <label for="TotalNumber">0.00$</label><br />
+          </div>
+          <button id="acceptLine">אישור</button>
         </div>
-        <div class="input-field">
-          <label id="SecondUserInfoHeader">תיאור תכולת המסמך</label>
-          <input
-            class="input"
-            type="text"
-            id="SecondUserInfoHeaderText"
-            name="SecondUserInfoHeaderText"
-            placeholder="למשל, שם הפרויקט"
-          />
-        </div>
-        <div class="input-field">
-          <!-- <label id="ThirdUserInfoHeader">פירוט שירותים ופריטים</label> -->
-          <label for="CatalogNumber">מק"ט:</label>
-          <input
-            class="input"
-            type="text"
-            id="CatalogNumber"
-            name="CatalogNumber"
-          />
-        </div>
-        <div class="input-field">
-          <label for="Description">פירוט</label>
-          <input
-            class="input"
-            type="text"
-            id="Description"
-            name="Description"
-            placeholder="תיאור השירות או המוצר"
-          />
-        </div>
-        <div class="input-field">
-          <label for="Amount">כמות</label>
-          <input class="input" type="text" id="Amount" name="Amount" />
-        </div>
-        <div class="input-field">
-          <label for="Price per unit">מחיר ליחידה</label>
-          <input
-            class="input"
-            type="text"
-            id="Price per unit"
-            name="Price per unit"
-          />
-        </div>
-
-        <div class="input-field">
-          <label for="CurrencyOptions">מטבע:</label>
-          <select id="CurrencyOptions">
-            <option value="Israeli Shekel">שקל ישראלי</option>
-            <option value="US Dollar">דולר אמריקאי</option>
-            <option value="Euro">אירו</option>
-            <option value="Pound Sterling">לישט</option>
-            <option value="Japanese Yen">יין יפני</option>
-            <option value="Swiss Franc">פרנק שוויצרי</option>
-            <option value="Chinese Yuan">יואן סיני</option>
-            <option value="Australian Dollar">דולר אוסטרלי</option>
-            <option value="Canadian Dollar">דולר קנדי</option>
-            <option value="Russian Ruble">רובל</option>
-            <option value="Brazilian Real">ריאל ברזילאי</option>
-            <option value="Hong Kong Dollar">דולר הונג קונגי</option>
-            <option value="Singapore Dollar">דולר סינגפורי</option>
-            <option value="Thai Baht">באט תאילנדי</option>
-            <option value="Mexican Peso">פזו מקסיקני</option>
-            <option value="Turkish Lira">לירה טורקית</option>
-            <option value="New Zealand Dollar">דולר ניו זילנדי</option>
-            <option value="Swedish Krona">כתר שוודי</option>
-            <option value="Norwegian Krone">כתר נורבגי</option>
-            <option value="Danish Krone">כתר דני</option>
-            <option value="South Korean Won">וון דרום קוריאני</option>
-            <option value="Indian Rupee">רופי הודי</option>
-            <option value="Zloty">זלוטי</option>
-            <option value="Rand">ראנד</option>
-            <option value="Kuna">קונה</option>
-            <option value="Czech Koruna">כתר צ'כי</option>
-            <option value="Hungarian Forint">פורינט הונגרי</option>
-            <option value="Indonesian Rupiah">רופי אינדונזי</option>
-            <option value="Romanian Leu">לאו רומני</option>
-            <option value="Bulgarian Lev">לב בולגרי</option>
-          </select>
-        </div>
-
-        <div class="input-field">
-          <label for="VAT">מע"מ</label>
-          <select id="VAT">
-            <option value="Before">לפני</option>
-            <option value="VATIncluded">כולל</option>
-          </select>
-        </div>
-
-        <div class="input-field">
-          <h4>סה"כ</h4>
-          <label for="TotalNumber">0.00$</label><br />
-        </div>
+        <button id="addMoreLine">הוספת פריטים *</button>
       </div>
+      <br />
       <hr />
       <h2 id="headNotes">הערות שיופיעו במסמך</h2>
       <div id="Notes">
@@ -227,8 +242,9 @@
       </div>
       <hr />
       <div id="MailInfo">
+        <brr />
+        <h2 id="mailInfo">שליחה במייל</h2>
         <div class="field">
-          <h2 id="mailInfo">שליחה במייל</h2>
           <label id="sendOriginalToMail">שליחת מסמך המקור במייל</label>
           <input
             class="input"
@@ -238,10 +254,9 @@
             placeholder="הכנסת כתובת מייל"
           />
           <h6 id="underMailInput">ניתן למלא עד 5 כתובות מייל</h6>
+          <br />
         </div>
         <div class="field">
-          <br />
-          <br />
           <label id="moreContentForMail">תוכן נוסף במייל ללקוח</label>
           <input
             class="input"

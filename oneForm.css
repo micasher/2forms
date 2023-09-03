@@ -143,17 +143,31 @@ textarea {
   padding: 10px;
 }
 
-#CostumerInfo {
+/* #CostumerInfo {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(150px, 1fr)
-  ); /* Responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
   padding: 10px;
   direction: rtl;
+} */
+.documentInfo {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  padding: 10px;
+  direction: rtl;
 }
-
+.documentDescribe {
+  gap: 20px;
+  padding: 10px;
+}
+.documentMoreServicesAndItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 5px;
+  padding: 10px;
+  direction: rtl;
+}
 #MailInfo {
   display: grid;
   grid-template-columns: repeat(
